@@ -4,7 +4,7 @@ version = "0.0.1"
 authors = ["Renato Zannon <renato@rrsz.com.br>"]
 license = "MIT"
 description = "Raw FFI bindings to OpenCV"
-repository = "https://github.com/renato-zannon/opencv-sys"
+repository = "https://github.com/renato-zannon/rust-opencv-sys"
 
 links = "opencv"
 build = "build.rs"
