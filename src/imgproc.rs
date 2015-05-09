@@ -4,7 +4,7 @@ use libc::size_t;
 use core::{CvArr, CvBox2D, CvChain, CvContour, CvHistogram, CvMat, CvMemStorage, CvPoint2D32f, CvPoint, CvRect, CvScalar, CvSeqBlock, CvSeq, CvSetElem, CvSet, CvSize, CvSlice, CvTermCriteria, IplConvKernel, Struct_CvSeq, schar};
 
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvConnectedComp {
     pub area: ::libc::c_double,
     pub value: CvScalar,
@@ -240,7 +240,7 @@ pub const CV_MOP_GRADIENT: ::libc::c_uint = 4;
 pub const CV_MOP_TOPHAT: ::libc::c_uint = 5;
 pub const CV_MOP_BLACKHAT: ::libc::c_uint = 6;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvMoments {
     pub m00: ::libc::c_double,
     pub m10: ::libc::c_double,
@@ -266,7 +266,7 @@ impl ::std::default::Default for Struct_CvMoments {
 }
 pub type CvMoments = Struct_CvMoments;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvHuMoments {
     pub hu1: ::libc::c_double,
     pub hu2: ::libc::c_double,
@@ -309,7 +309,7 @@ pub const CV_LINK_RUNS: ::libc::c_uint = 5;
 pub enum Struct__CvContourScanner { }
 pub type CvContourScanner = *mut Struct__CvContourScanner;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvChainPtReader {
     pub header_size: ::libc::c_int,
     pub seq: *mut CvSeq,
@@ -321,7 +321,7 @@ pub struct Struct_CvChainPtReader {
     pub prev_elem: *mut schar,
     pub code: ::libc::c_char,
     pub pt: CvPoint,
-    pub deltas: [[schar; 2us]; 8us],
+    pub deltas: [[schar; 2usize]; 8usize],
 }
 impl ::std::default::Default for Struct_CvChainPtReader {
     fn default() -> Struct_CvChainPtReader { unsafe { ::std::mem::zeroed() } }
@@ -329,18 +329,18 @@ impl ::std::default::Default for Struct_CvChainPtReader {
 pub type CvChainPtReader = Struct_CvChainPtReader;
 pub type CvSubdiv2DEdge = size_t;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvQuadEdge2D {
     pub flags: ::libc::c_int,
-    pub pt: [*mut Struct_CvSubdiv2DPoint; 4us],
-    pub next: [CvSubdiv2DEdge; 4us],
+    pub pt: [*mut Struct_CvSubdiv2DPoint; 4usize],
+    pub next: [CvSubdiv2DEdge; 4usize],
 }
 impl ::std::default::Default for Struct_CvQuadEdge2D {
     fn default() -> Struct_CvQuadEdge2D { unsafe { ::std::mem::zeroed() } }
 }
 pub type CvQuadEdge2D = Struct_CvQuadEdge2D;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSubdiv2DPoint {
     pub flags: ::libc::c_int,
     pub first: CvSubdiv2DEdge,
@@ -352,7 +352,7 @@ impl ::std::default::Default for Struct_CvSubdiv2DPoint {
 }
 pub type CvSubdiv2DPoint = Struct_CvSubdiv2DPoint;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSubdiv2D {
     pub flags: ::libc::c_int,
     pub header_size: ::libc::c_int,
@@ -408,7 +408,7 @@ pub type Enum_Unnamed14 = ::libc::c_uint;
 pub const CV_CLOCKWISE: ::libc::c_uint = 1;
 pub const CV_COUNTER_CLOCKWISE: ::libc::c_uint = 2;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvConvexityDefect {
     pub start: *mut CvPoint,
     pub end: *mut CvPoint,

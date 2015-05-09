@@ -9,5 +9,8 @@ repository = "https://github.com/renato-zannon/rust-opencv-sys"
 links = "opencv"
 build = "build.rs"
 
+[dependencies]
+libc = "*"
+
 [build-dependencies]
 pkg-config = "*"
