@@ -9,9 +9,9 @@ pub type ushort = ::libc::c_ushort;
 pub type schar = ::libc::c_char;
 pub type CvArr = ::libc::c_void;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Union_Cv32suf {
-    pub _bindgen_data_: [u32; 1us],
+    pub _bindgen_data_: [u32; 1usize],
 }
 impl Union_Cv32suf {
     pub unsafe fn i(&mut self) -> *mut ::libc::c_int {
@@ -29,9 +29,9 @@ impl ::std::default::Default for Union_Cv32suf {
 }
 pub type Cv32suf = Union_Cv32suf;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Union_Cv64suf {
-    pub _bindgen_data_: [u64; 1us],
+    pub _bindgen_data_: [u64; 1usize],
 }
 impl Union_Cv64suf {
     pub unsafe fn i(&mut self) -> *mut int64 {
@@ -107,15 +107,15 @@ pub const CV_OpenCLNoAMDBlasFft: ::libc::c_int = -222;
 pub type CvRNG = uint64;
 pub enum Struct__IplTileInfo { }
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct__IplImage {
     pub nSize: ::libc::c_int,
     pub ID: ::libc::c_int,
     pub nChannels: ::libc::c_int,
     pub alphaChannel: ::libc::c_int,
     pub depth: ::libc::c_int,
-    pub colorModel: [::libc::c_char; 4us],
-    pub channelSeq: [::libc::c_char; 4us],
+    pub colorModel: [::libc::c_char; 4usize],
+    pub channelSeq: [::libc::c_char; 4usize],
     pub dataOrder: ::libc::c_int,
     pub origin: ::libc::c_int,
     pub align: ::libc::c_int,
@@ -128,8 +128,8 @@ pub struct Struct__IplImage {
     pub imageSize: ::libc::c_int,
     pub imageData: *mut ::libc::c_char,
     pub widthStep: ::libc::c_int,
-    pub BorderMode: [::libc::c_int; 4us],
-    pub BorderConst: [::libc::c_int; 4us],
+    pub BorderMode: [::libc::c_int; 4usize],
+    pub BorderConst: [::libc::c_int; 4usize],
     pub imageDataOrigin: *mut ::libc::c_char,
 }
 impl ::std::default::Default for Struct__IplImage {
@@ -138,7 +138,7 @@ impl ::std::default::Default for Struct__IplImage {
 pub type IplImage = Struct__IplImage;
 pub type IplTileInfo = Struct__IplTileInfo;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct__IplROI {
     pub coi: ::libc::c_int,
     pub xOffset: ::libc::c_int,
@@ -151,7 +151,7 @@ impl ::std::default::Default for Struct__IplROI {
 }
 pub type IplROI = Struct__IplROI;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct__IplConvKernel {
     pub nCols: ::libc::c_int,
     pub nRows: ::libc::c_int,
@@ -165,7 +165,7 @@ impl ::std::default::Default for Struct__IplConvKernel {
 }
 pub type IplConvKernel = Struct__IplConvKernel;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct__IplConvKernelFP {
     pub nCols: ::libc::c_int,
     pub nRows: ::libc::c_int,
@@ -180,7 +180,7 @@ impl ::std::default::Default for Struct__IplConvKernelFP {
 }
 pub type IplConvKernelFP = Struct__IplConvKernelFP;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvMat {
     pub _type: ::libc::c_int,
     pub step: ::libc::c_int,
@@ -194,9 +194,9 @@ impl ::std::default::Default for Struct_CvMat {
     fn default() -> Struct_CvMat { unsafe { ::std::mem::zeroed() } }
 }
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Union_Unnamed2 {
-    pub _bindgen_data_: [u64; 1us],
+    pub _bindgen_data_: [u64; 1usize],
 }
 impl Union_Unnamed2 {
     pub unsafe fn ptr(&mut self) -> *mut *mut uchar {
@@ -220,22 +220,22 @@ impl ::std::default::Default for Union_Unnamed2 {
 }
 pub type CvMat = Struct_CvMat;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvMatND {
     pub _type: ::libc::c_int,
     pub dims: ::libc::c_int,
     pub refcount: *mut ::libc::c_int,
     pub hdr_refcount: ::libc::c_int,
     pub data: Union_Unnamed3,
-    pub dim: [Struct_Unnamed4; 32us],
+    pub dim: [Struct_Unnamed4; 32usize],
 }
 impl ::std::default::Default for Struct_CvMatND {
     fn default() -> Struct_CvMatND { unsafe { ::std::mem::zeroed() } }
 }
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Union_Unnamed3 {
-    pub _bindgen_data_: [u64; 1us],
+    pub _bindgen_data_: [u64; 1usize],
 }
 impl Union_Unnamed3 {
     pub unsafe fn ptr(&mut self) -> *mut *mut uchar {
@@ -258,7 +258,7 @@ impl ::std::default::Default for Union_Unnamed3 {
     fn default() -> Union_Unnamed3 { unsafe { ::std::mem::zeroed() } }
 }
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_Unnamed4 {
     pub size: ::libc::c_int,
     pub step: ::libc::c_int,
@@ -268,7 +268,7 @@ impl ::std::default::Default for Struct_Unnamed4 {
 }
 pub type CvMatND = Struct_CvMatND;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSparseMat {
     pub _type: ::libc::c_int,
     pub dims: ::libc::c_int,
@@ -279,14 +279,14 @@ pub struct Struct_CvSparseMat {
     pub hashsize: ::libc::c_int,
     pub valoffset: ::libc::c_int,
     pub idxoffset: ::libc::c_int,
-    pub size: [::libc::c_int; 32us],
+    pub size: [::libc::c_int; 32usize],
 }
 impl ::std::default::Default for Struct_CvSparseMat {
     fn default() -> Struct_CvSparseMat { unsafe { ::std::mem::zeroed() } }
 }
 pub type CvSparseMat = Struct_CvSparseMat;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSparseNode {
     pub hashval: ::libc::c_uint,
     pub next: *mut Struct_CvSparseNode,
@@ -296,7 +296,7 @@ impl ::std::default::Default for Struct_CvSparseNode {
 }
 pub type CvSparseNode = Struct_CvSparseNode;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSparseMatIterator {
     pub mat: *mut CvSparseMat,
     pub node: *mut CvSparseNode,
@@ -310,11 +310,11 @@ impl ::std::default::Default for Struct_CvSparseMatIterator {
 pub type CvSparseMatIterator = Struct_CvSparseMatIterator;
 pub type CvHistType = ::libc::c_int;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvHistogram {
     pub _type: ::libc::c_int,
     pub bins: *mut CvArr,
-    pub thresh: [[::libc::c_float; 2us]; 32us],
+    pub thresh: [[::libc::c_float; 2usize]; 32usize],
     pub thresh2: *mut *mut ::libc::c_float,
     pub mat: CvMatND,
 }
@@ -323,7 +323,7 @@ impl ::std::default::Default for Struct_CvHistogram {
 }
 pub type CvHistogram = Struct_CvHistogram;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvRect {
     pub x: ::libc::c_int,
     pub y: ::libc::c_int,
@@ -335,7 +335,7 @@ impl ::std::default::Default for Struct_CvRect {
 }
 pub type CvRect = Struct_CvRect;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvTermCriteria {
     pub _type: ::libc::c_int,
     pub max_iter: ::libc::c_int,
@@ -346,7 +346,7 @@ impl ::std::default::Default for Struct_CvTermCriteria {
 }
 pub type CvTermCriteria = Struct_CvTermCriteria;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvPoint {
     pub x: ::libc::c_int,
     pub y: ::libc::c_int,
@@ -356,7 +356,7 @@ impl ::std::default::Default for Struct_CvPoint {
 }
 pub type CvPoint = Struct_CvPoint;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvPoint2D32f {
     pub x: ::libc::c_float,
     pub y: ::libc::c_float,
@@ -366,7 +366,7 @@ impl ::std::default::Default for Struct_CvPoint2D32f {
 }
 pub type CvPoint2D32f = Struct_CvPoint2D32f;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvPoint3D32f {
     pub x: ::libc::c_float,
     pub y: ::libc::c_float,
@@ -377,7 +377,7 @@ impl ::std::default::Default for Struct_CvPoint3D32f {
 }
 pub type CvPoint3D32f = Struct_CvPoint3D32f;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvPoint2D64f {
     pub x: ::libc::c_double,
     pub y: ::libc::c_double,
@@ -387,7 +387,7 @@ impl ::std::default::Default for Struct_CvPoint2D64f {
 }
 pub type CvPoint2D64f = Struct_CvPoint2D64f;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvPoint3D64f {
     pub x: ::libc::c_double,
     pub y: ::libc::c_double,
@@ -398,7 +398,7 @@ impl ::std::default::Default for Struct_CvPoint3D64f {
 }
 pub type CvPoint3D64f = Struct_CvPoint3D64f;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSize {
     pub width: ::libc::c_int,
     pub height: ::libc::c_int,
@@ -408,7 +408,7 @@ impl ::std::default::Default for Struct_CvSize {
 }
 pub type CvSize = Struct_CvSize;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSize2D32f {
     pub width: ::libc::c_float,
     pub height: ::libc::c_float,
@@ -418,7 +418,7 @@ impl ::std::default::Default for Struct_CvSize2D32f {
 }
 pub type CvSize2D32f = Struct_CvSize2D32f;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvBox2D {
     pub center: CvPoint2D32f,
     pub size: CvSize2D32f,
@@ -429,7 +429,7 @@ impl ::std::default::Default for Struct_CvBox2D {
 }
 pub type CvBox2D = Struct_CvBox2D;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvLineIterator {
     pub ptr: *mut uchar,
     pub err: ::libc::c_int,
@@ -443,7 +443,7 @@ impl ::std::default::Default for Struct_CvLineIterator {
 }
 pub type CvLineIterator = Struct_CvLineIterator;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSlice {
     pub start_index: ::libc::c_int,
     pub end_index: ::libc::c_int,
@@ -453,16 +453,16 @@ impl ::std::default::Default for Struct_CvSlice {
 }
 pub type CvSlice = Struct_CvSlice;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvScalar {
-    pub val: [::libc::c_double; 4us],
+    pub val: [::libc::c_double; 4usize],
 }
 impl ::std::default::Default for Struct_CvScalar {
     fn default() -> Struct_CvScalar { unsafe { ::std::mem::zeroed() } }
 }
 pub type CvScalar = Struct_CvScalar;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvMemBlock {
     pub prev: *mut Struct_CvMemBlock,
     pub next: *mut Struct_CvMemBlock,
@@ -472,7 +472,7 @@ impl ::std::default::Default for Struct_CvMemBlock {
 }
 pub type CvMemBlock = Struct_CvMemBlock;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvMemStorage {
     pub signature: ::libc::c_int,
     pub bottom: *mut CvMemBlock,
@@ -486,7 +486,7 @@ impl ::std::default::Default for Struct_CvMemStorage {
 }
 pub type CvMemStorage = Struct_CvMemStorage;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvMemStoragePos {
     pub top: *mut CvMemBlock,
     pub free_space: ::libc::c_int,
@@ -496,7 +496,7 @@ impl ::std::default::Default for Struct_CvMemStoragePos {
 }
 pub type CvMemStoragePos = Struct_CvMemStoragePos;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSeqBlock {
     pub prev: *mut Struct_CvSeqBlock,
     pub next: *mut Struct_CvSeqBlock,
@@ -509,7 +509,7 @@ impl ::std::default::Default for Struct_CvSeqBlock {
 }
 pub type CvSeqBlock = Struct_CvSeqBlock;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSeq {
     pub flags: ::libc::c_int,
     pub header_size: ::libc::c_int,
@@ -531,7 +531,7 @@ impl ::std::default::Default for Struct_CvSeq {
 }
 pub type CvSeq = Struct_CvSeq;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSetElem {
     pub flags: ::libc::c_int,
     pub next_free: *mut Struct_CvSetElem,
@@ -541,7 +541,7 @@ impl ::std::default::Default for Struct_CvSetElem {
 }
 pub type CvSetElem = Struct_CvSetElem;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSet {
     pub flags: ::libc::c_int,
     pub header_size: ::libc::c_int,
@@ -565,19 +565,19 @@ impl ::std::default::Default for Struct_CvSet {
 }
 pub type CvSet = Struct_CvSet;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvGraphEdge {
     pub flags: ::libc::c_int,
     pub weight: ::libc::c_float,
-    pub next: [*mut Struct_CvGraphEdge; 2us],
-    pub vtx: [*mut Struct_CvGraphVtx; 2us],
+    pub next: [*mut Struct_CvGraphEdge; 2usize],
+    pub vtx: [*mut Struct_CvGraphVtx; 2usize],
 }
 impl ::std::default::Default for Struct_CvGraphEdge {
     fn default() -> Struct_CvGraphEdge { unsafe { ::std::mem::zeroed() } }
 }
 pub type CvGraphEdge = Struct_CvGraphEdge;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvGraphVtx {
     pub flags: ::libc::c_int,
     pub first: *mut Struct_CvGraphEdge,
@@ -587,7 +587,7 @@ impl ::std::default::Default for Struct_CvGraphVtx {
 }
 pub type CvGraphVtx = Struct_CvGraphVtx;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvGraphVtx2D {
     pub flags: ::libc::c_int,
     pub first: *mut Struct_CvGraphEdge,
@@ -598,7 +598,7 @@ impl ::std::default::Default for Struct_CvGraphVtx2D {
 }
 pub type CvGraphVtx2D = Struct_CvGraphVtx2D;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvGraph {
     pub flags: ::libc::c_int,
     pub header_size: ::libc::c_int,
@@ -623,7 +623,7 @@ impl ::std::default::Default for Struct_CvGraph {
 }
 pub type CvGraph = Struct_CvGraph;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvChain {
     pub flags: ::libc::c_int,
     pub header_size: ::libc::c_int,
@@ -646,7 +646,7 @@ impl ::std::default::Default for Struct_CvChain {
 }
 pub type CvChain = Struct_CvChain;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvContour {
     pub flags: ::libc::c_int,
     pub header_size: ::libc::c_int,
@@ -664,7 +664,7 @@ pub struct Struct_CvContour {
     pub first: *mut CvSeqBlock,
     pub rect: CvRect,
     pub color: ::libc::c_int,
-    pub reserved: [::libc::c_int; 3us],
+    pub reserved: [::libc::c_int; 3usize],
 }
 impl ::std::default::Default for Struct_CvContour {
     fn default() -> Struct_CvContour { unsafe { ::std::mem::zeroed() } }
@@ -672,7 +672,7 @@ impl ::std::default::Default for Struct_CvContour {
 pub type CvContour = Struct_CvContour;
 pub type CvPoint2DSeq = CvContour;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSeqWriter {
     pub header_size: ::libc::c_int,
     pub seq: *mut CvSeq,
@@ -686,7 +686,7 @@ impl ::std::default::Default for Struct_CvSeqWriter {
 }
 pub type CvSeqWriter = Struct_CvSeqWriter;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvSeqReader {
     pub header_size: ::libc::c_int,
     pub seq: *mut CvSeq,
@@ -704,7 +704,7 @@ pub type CvSeqReader = Struct_CvSeqReader;
 pub enum Struct_CvFileStorage { }
 pub type CvFileStorage = Struct_CvFileStorage;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvAttrList {
     pub attr: *mut *const ::libc::c_char,
     pub next: *mut Struct_CvAttrList,
@@ -714,7 +714,7 @@ impl ::std::default::Default for Struct_CvAttrList {
 }
 pub type CvAttrList = Struct_CvAttrList;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvString {
     pub len: ::libc::c_int,
     pub ptr: *mut ::libc::c_char,
@@ -724,7 +724,7 @@ impl ::std::default::Default for Struct_CvString {
 }
 pub type CvString = Struct_CvString;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvStringHashNode {
     pub hashval: ::libc::c_uint,
     pub _str: CvString,
@@ -739,7 +739,7 @@ pub type CvStringHashNode = Struct_CvStringHashNode;
 pub enum Struct_CvGenericHash { }
 pub type CvFileNodeHash = Struct_CvGenericHash;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvFileNode {
     pub tag: ::libc::c_int,
     pub info: *mut Struct_CvTypeInfo,
@@ -749,9 +749,9 @@ impl ::std::default::Default for Struct_CvFileNode {
     fn default() -> Struct_CvFileNode { unsafe { ::std::mem::zeroed() } }
 }
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Union_Unnamed5 {
-    pub _bindgen_data_: [u64; 2us],
+    pub _bindgen_data_: [u64; 2usize],
 }
 impl Union_Unnamed5 {
     pub unsafe fn f(&mut self) -> *mut ::libc::c_double {
@@ -795,7 +795,7 @@ pub type CvCloneFunc =
     ::std::option::Option<extern "C" fn(struct_ptr: *const ::libc::c_void)
                               -> *mut ::libc::c_void>;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvTypeInfo {
     pub flags: ::libc::c_int,
     pub header_size: ::libc::c_int,
@@ -813,7 +813,7 @@ impl ::std::default::Default for Struct_CvTypeInfo {
 }
 pub type CvTypeInfo = Struct_CvTypeInfo;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvPluginFuncInfo {
     pub func_addr: *mut *mut ::libc::c_void,
     pub default_func_addr: *mut ::libc::c_void,
@@ -828,7 +828,7 @@ impl ::std::default::Default for Struct_CvPluginFuncInfo {
 }
 pub type CvPluginFuncInfo = Struct_CvPluginFuncInfo;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvModuleInfo {
     pub next: *mut Struct_CvModuleInfo,
     pub name: *const ::libc::c_char,
@@ -840,14 +840,14 @@ impl ::std::default::Default for Struct_CvModuleInfo {
 }
 pub type CvModuleInfo = Struct_CvModuleInfo;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvNArrayIterator {
     pub count: ::libc::c_int,
     pub dims: ::libc::c_int,
     pub size: CvSize,
-    pub ptr: [*mut uchar; 10us],
-    pub stack: [::libc::c_int; 32us],
-    pub hdr: [*mut CvMatND; 10us],
+    pub ptr: [*mut uchar; 10usize],
+    pub stack: [::libc::c_int; 32usize],
+    pub hdr: [*mut CvMatND; 10usize],
 }
 impl ::std::default::Default for Struct_CvNArrayIterator {
     fn default() -> Struct_CvNArrayIterator {
@@ -862,7 +862,7 @@ pub type CvCmpFunc =
                                userdata: *mut ::libc::c_void)
                               -> ::libc::c_int>;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvGraphScanner {
     pub vtx: *mut CvGraphVtx,
     pub dst: *mut CvGraphVtx,
@@ -877,7 +877,7 @@ impl ::std::default::Default for Struct_CvGraphScanner {
 }
 pub type CvGraphScanner = Struct_CvGraphScanner;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvFont {
     pub nameFont: *const ::libc::c_char,
     pub color: CvScalar,
@@ -897,7 +897,7 @@ impl ::std::default::Default for Struct_CvFont {
 }
 pub type CvFont = Struct_CvFont;
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 pub struct Struct_CvTreeNodeIterator {
     pub node: *const ::libc::c_void,
     pub level: ::libc::c_int,
